@@ -1,0 +1,103 @@
+
+TP - Quoridor 步步為營
+
+	- T9 - 
+		重整
+		+-------------------+
+			[+] 牆壁重疊
+			[+]	死路判斷
+			[+] 玩家棋放置判斷
+			[+] 牆壁、玩家繪製
+			
+	- T8 -
+		[+] 牆壁重疊
+		+-------------------+
+			[+]	死路判斷
+			[+] 玩家棋放置判斷
+			[+] 牆壁、玩家繪製
+	
+	- T7 -
+		[+]	死路判斷
+		[+] 玩家棋放置判斷
+		[+] 牆壁、玩家繪製
+
+	T1
+		[+] LinkStart
+			- 起點
+				- 主程式
+					- 建立 Dominator 物件
+						- 初始化
+						- 執行
+			
+		[+] Dominator
+			- 全域變數
+				- private int CELL_SIZE		單位
+				- private int width			寬
+				- private int height		高
+				- private int deviation		偏差
+			
+			- init()
+				- CELL_SIZE = 80;
+				- width = 9;
+				- height = 9;
+				- deviation = 15;
+				
+			- run()
+				- 建立 Checkerboard1 物件
+				- JFrame 框架設定
+					- 標題： TP - Quoridor 步步為營
+					- 佈局管理器： 無
+					- 尺寸: (750, 770)(width*CELL_SIZE + deviation*2, height*CELL_SIZE + deviation*3+5)
+							
+					- 背景顏色： 黑
+					- 初始位置： (50, 50)
+					
+		[+] Checkerboard1
+			- 全域變數
+				- private int CELL_SIZE
+				- private int width
+				- private int height
+				- private int deviation
+				- private Color drawRect_Color;		格線顏色
+				- private Color background_Color; 	背景顏色
+				- private Color player_Color;		玩家棋顏色
+				- private Color wall_Color;			牆壁顏色
+			
+			- init()
+				- 變數初始化
+					- drawRect_Color = new Color(0, 0, 0); 		//黑色
+					- background_Color = new Color(132, 0, 0);	//深深咖啡色
+					- player_Color = new Color(255, 204, 153); 	//淡橘色
+					- wall_Color = new Color(153, 153, 255); 	//淡紫色
+				
+				- JPanel 面板初始化
+					- 尺寸： (735, 735)(width*CELL_SIZE + deviation, height*CELL_SIZE + deviation)				
+					- 背景顏色:　background_Color
+				
+			- paintComponent()
+				- 方格大小： 65
+				- 玩家棋大小： 25
+				- 牆壁大小： 15*165
+				
+				- 方格起點 (0, 0)
+					- 滑鼠座標 (15, 15)
+					- 右邊界 (不含最右格線)： 720
+					- 下邊界 (不含最下格線)： 720
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
